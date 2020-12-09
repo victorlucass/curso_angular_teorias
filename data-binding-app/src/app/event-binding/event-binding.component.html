@@ -1,9 +1,63 @@
 <section class="container">
-  <mat-card class="mat-elevation-z3">
+  <mat-card class="center mat-elevation-z3">
     <div>
       <h1>Event-Binding</h1>
-      <button mat-button color='primary' (click)='save()'>Save</button>
-      <button mat-button color='warn' (click)='inc()'>{{ myButton }}</button>
+      <button mat-button color="primary" (click)="save()">Save</button>
+      <button mat-button color="warn" (click)="inc()">{{ myButton }}</button>
+      <button mat-button color="primary" [disabled]="!btnEnable">
+        My Button 1
+      </button>
+      <button mat-button color="warn" [disabled]="!btnEnable">
+        My Button 2
+      </button>
+      <button
+        mat-button
+        color="warn"
+        [disabled]="!btnEnable"
+        (click)="disable()"
+      >
+        Disable
+      </button>
+      <p>{{ i }}</p>
     </div>
+    <div>
+      <mat-progress-spinner [mode]="spinnerMode" value="{{ i }}">
+      </mat-progress-spinner>
+    </div>
+
+    <div>
+      <mat-checkbox color="primary" (change)="cbChange($event)"
+        >Disable / Enable</mat-checkbox
+      >
+    </div>
+    <!-- <h4>Basic mat-select</h4> -->
+    <mat-form-field style="padding: 10px">
+      <mat-label>Favorite food</mat-label>
+      <mat-select
+        [disabled]="selectDisabled"
+        (selectionChange)="selectChange($event)"
+      >
+        <mat-option value="Cozido de carne">Cozido de carne</mat-option>
+        <mat-option value="Peixe Assado">Peixe Assado</mat-option>
+        <mat-option value="Arroz com brócolis">Arroz com brócolis</mat-option>
+        <mat-option value="Lasanha">Lasanha</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>Comida selecionada foi '{{ NameChange }}'</p>
+  </mat-card>
+</section>
+
+<section class="container">
+  <mat-card class="center mat-elevation-z3">
+    <mat-form-field class="example-full-width">
+      <mat-label>Your Name</mat-label>
+      <input
+        matInput
+        placeholder="Ex. João do Mal"
+        (input)="inputName = $event.target.value"
+        [value] = 'inputName'
+      />
+    </mat-form-field>
+    <mat-card-actions> Name: {{ inputName }} </mat-card-actions>
   </mat-card>
 </section>

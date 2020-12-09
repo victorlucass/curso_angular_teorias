@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-event-binding',
   templateUrl: './event-binding.component.html',
@@ -7,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventBindingComponent implements OnInit {
 
-  myButton:string = 'click';
+  selectDisabled = false;
+  NameChange:string;
+  selectChange(event){
+    this.NameChange = event.value;
+  }
+
+  myButton:string = 'My button';
   save() {
     alert('Savo com sucesso!')
   }
@@ -19,6 +24,32 @@ export class EventBindingComponent implements OnInit {
     this.myButton = 'it was clicked ' + this.i + ' times';
   }
 
+  disable(){
+    this.btnEnable= false;
+    this.spinnerMode='indeterminate';
+    this.i = 0;
+    setTimeout(
+      ()=>{
+        this.btnEnable=true;
+        this.spinnerMode='determinate';
+      }
+      ,3000
+    )
+  }
+
+  spinnerMode = 'determinate';
+  btnEnable= true;
+
+  cbChange(event) {
+    console.log(event.checked);
+    this.selectDisabled = event.checked;
+  }
+
+  inputEvent(event) {
+    event = console.log(event.target.value);
+  }
+
+  inputName ='Lucas';
 
   constructor() { }
 
