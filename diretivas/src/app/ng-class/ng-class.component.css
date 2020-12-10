@@ -1,0 +1,28 @@
+.class0{
+  font-family: 'Nunito';
+  color: white;
+  background-color: black;
+  font-size: 1em;
+  padding: 10px;
+}
+.class01{
+  font-family: Roboto,'Courier New', Courier, monospace;
+  color: white;
+  background-color: blue;
+  font-size: 2em;
+  padding: 10px;
+}
+.class02{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: brown;
+  font-size: 3em;
+  padding: 10px;
+}
+.class03{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  background-color: tomato;
+  font-size: 4em;
+  padding: 15px;
+}
