@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgIfComponent implements OnInit {
 
-  showName:boolean = true;
-  showAddress:boolean = true;
-  showPhone:boolean = true;
-  showAge:boolean = true;
+  showName:boolean = false;
+  showAddress:boolean = false;
+  showPhone:boolean = false;
+  showAge:boolean = false;
 
 
   constructor() { }
