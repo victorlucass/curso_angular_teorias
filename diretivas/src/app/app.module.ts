@@ -4,22 +4,32 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { FormsModule } from '@angular/forms';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
+import { SubNgIfComponent } from './ng-if/sub-ng-if/sub-ng-if.component';
+import { NgForComponent } from './ng-for/ng-for.component'
+import { MatCheckboxModule } from  '@angular/material/checkbox'
+import { MatInputModule } from  '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-import { NgClassComponent } from './ng-class/ng-class.component';
-import { NgIfComponent } from './ng-if/ng-if.component';
-import { MatCheckboxModule } from  '@angular/material/checkbox'
-import { MatInputModule } from  '@angular/material/input'
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { NgForFormComponent } from './ng-for-form/ng-for-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NgStyleComponent,
     NgClassComponent,
-    NgIfComponent
+    NgIfComponent,
+    SubNgIfComponent,
+    NgForComponent,
+    NgForFormComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +41,10 @@ import { MatInputModule } from  '@angular/material/input'
     MatRadioModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,3 +11,6 @@ body { margin: 0; font-family: 'Nunito', "Helvetica Neue", sans-serif; }
   margin: 20px;
 }
 
+mat-card {
+  margin: 10px;
+}
