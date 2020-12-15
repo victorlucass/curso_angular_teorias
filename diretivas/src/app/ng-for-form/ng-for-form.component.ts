@@ -31,9 +31,40 @@ export class NgForFormComponent implements OnInit {
     }
   ];
 
+  clients = [
+
+  ];
+
+  load='determinate'
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  save(){
+    this.load='indeterminate';
+    setTimeout(
+      ()=>
+      {
+        this.clients.push({
+          name:this.name,
+          address: this.address,
+          phone: this.phone,
+          age:this.age,
+          city: this.city
+        });
+        this.cancel();
+        this.load='determinate';
+      }
+      ,3000)
+  }
+
+  cancel(){
+    this.name = '';
+    this.address = '';
+    this.phone = '';
+    this.city = '';
+    this.age = 0;
+  }
 }

@@ -18,6 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NgForFormComponent } from './ng-for-form/ng-for-form.component';
 
 
@@ -44,7 +46,9 @@ import { NgForFormComponent } from './ng-for-form/ng-for-form.component';
     MatInputModule,
     MatListModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

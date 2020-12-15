@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'diretivas';
+  theme= 'escuro';
+  alterTheme(event){
+    event.checked ? this.theme = 'escuro' : this.theme ='claro';
+    console.log(event);
+  }
 }

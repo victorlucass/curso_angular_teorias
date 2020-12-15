@@ -1,0 +1,17 @@
+.escuro{
+  background: rgba(0, 0, 0, 0.685);
+  color: greenyellow;
+}
+.claro{
+  background: wheat;
+  color: black;
+}
+
+mat-slide-toggle {
+  padding-top: 10px;
+  padding-right: 5px;
+}
+
+mat-card {
+  padding: 10px;
+}

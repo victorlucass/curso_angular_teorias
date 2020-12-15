@@ -1,5 +1,17 @@
-<app-ng-style></app-ng-style>
-<app-ng-class></app-ng-class>
-<app-ng-if></app-ng-if>
-<app-ng-for></app-ng-for>
-<app-ng-for-form></app-ng-for-form>
+<section [ngClass]="theme">
+  <header style="text-align: center">
+    <mat-slide-toggle
+    checked = 'true'
+    (change)='alterTheme($event)'
+  >
+    Alterar tema
+  </mat-slide-toggle>
+  </header>
+  <section class="container">
+    <app-ng-style></app-ng-style>
+    <app-ng-class></app-ng-class>
+    <app-ng-if></app-ng-if>
+    <app-ng-for></app-ng-for>
+    <app-ng-for-form></app-ng-for-form>
+  </section>
+</section>

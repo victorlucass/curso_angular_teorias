@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NgStyleComponent implements OnInit {
 
   myFontSize = '1em';
-  myColor = 'green'
+  myColor = 'green';
+  radioChange(event){
+    console.log(event);
+  }
 
   constructor() { }
 
