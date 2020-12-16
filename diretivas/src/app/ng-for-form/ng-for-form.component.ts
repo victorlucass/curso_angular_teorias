@@ -35,7 +35,12 @@ export class NgForFormComponent implements OnInit {
 
   ];
 
-  load='determinate'
+  load='determinate';
+  disabled = false;
+
+  delete(i:number){
+    this.clients.splice(i,1);
+  }
 
   constructor() { }
 
@@ -44,6 +49,7 @@ export class NgForFormComponent implements OnInit {
 
   save(){
     this.load='indeterminate';
+    this.disabled = true;
     setTimeout(
       ()=>
       {
@@ -54,8 +60,10 @@ export class NgForFormComponent implements OnInit {
           age:this.age,
           city: this.city
         });
+
         this.cancel();
         this.load='determinate';
+        this.disabled = false;
       }
       ,3000)
   }
