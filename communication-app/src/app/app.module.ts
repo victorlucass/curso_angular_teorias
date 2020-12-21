@@ -12,6 +12,8 @@ import { ChildItemComponent } from './event/child-item/child-item.component';
 import { ClientsComponent } from './clients/clients.component';
 import { FormsModule } from '@angular/forms';
 import { ItemCLientComponent } from './clients/item-client/item-client.component';
+import { ParentChildComponent } from './parent-child/parent-child.component';
+import { TimerComponent } from './parent-child/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ItemCLientComponent } from './clients/item-client/item-client.component
     EventComponent,
     ChildItemComponent,
     ClientsComponent,
-    ItemCLientComponent
+    ItemCLientComponent,
+    ParentChildComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

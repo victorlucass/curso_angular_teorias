@@ -11,7 +11,7 @@ export class TwoWayDataBindingComponent implements OnInit {
   name2:string = 'Digite 02';
 
   cliente = {
-    name: 'Victor',
+    name: 'Victor Lucas',
     lastName: 'Oliveira',
     age:19,
     address:""
