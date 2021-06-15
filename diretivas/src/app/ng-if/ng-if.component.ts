@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-ng-if',
@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgIfComponent implements OnInit {
 
-  showName:boolean = false;
-  showAddress:boolean = false;
-  showPhone:boolean = false;
-  showAge:boolean = false;
+  showName: boolean = false;
+  showAddress: boolean = false;
+  showPhone: boolean = false;
+  showAge: boolean = false;
 
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

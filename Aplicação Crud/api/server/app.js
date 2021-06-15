@@ -11,7 +11,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
 
 mongoose.connect(
-    'mongodb://localhost:27017/http_app', 
+    'mongodb://localhost:27017/http_app',
     {useNewUrlParser: true});
 
 app.use('/departments', department_controller);

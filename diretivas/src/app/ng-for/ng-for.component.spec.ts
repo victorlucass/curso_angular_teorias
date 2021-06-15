@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgForComponent } from './ng-for.component';
+import {NgForComponent} from './ng-for.component';
 
 describe('NgForComponent', () => {
   let component: NgForComponent;
@@ -8,9 +8,9 @@ describe('NgForComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgForComponent ]
+      declarations: [NgForComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -3,22 +3,22 @@ var router = express.Router();
 var Department = require('./department');
 var Product = require('./product');
 
-router.post('/', function(req, res) {
-   let d = new Department({ name: req.body.name });
-   d.save((err, dep) => {
+router.post('/', function (req, res) {
+    let d = new Department({name: req.body.name});
+    d.save((err, dep) => {
         if (err)
             res.status(500).send(err);
         else
             res.status(200).send(dep);
-   })
+    })
 })
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     Department.find().exec((err, deps) => {
-         if (err)
-             res.status(500).send(err);
-         else
-             res.status(200).send(deps);
+        if (err)
+            res.status(500).send(err);
+        else
+            res.status(200).send(deps);
     })
 })
 
@@ -30,13 +30,11 @@ router.delete('/:id', async (req, res) => {
             res.status(500).send({
                 msg: 'Could not remove this department. You may have to fix its dependencies before.'
             })
-        }
-        else {
+        } else {
             await Department.deleteOne({_id: id});
             res.status(200).send({});
         }
-    }
-    catch(err) {
+    } catch (err) {
         res.status(500).send({msg: "Internal error.", error: err})
     }
 })

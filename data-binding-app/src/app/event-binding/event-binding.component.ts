@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 @Component({
   selector: 'app-event-binding',
   templateUrl: './event-binding.component.html',
@@ -7,38 +8,40 @@ import { Component, OnInit } from '@angular/core';
 export class EventBindingComponent implements OnInit {
 
   selectDisabled = false;
-  NameChange:string;
-  selectChange(event){
+  NameChange: string;
+
+  selectChange(event) {
     this.NameChange = event.value;
   }
 
-  myButton:string = 'My button';
+  myButton: string = 'My button';
+
   save() {
     alert('Savo com sucesso!')
   }
 
   i = 0;
 
-  inc(){
+  inc() {
     this.i++;
     this.myButton = 'it was clicked ' + this.i + ' times';
   }
 
-  disable(){
-    this.btnEnable= false;
-    this.spinnerMode='indeterminate';
+  disable() {
+    this.btnEnable = false;
+    this.spinnerMode = 'indeterminate';
     this.i = 0;
     setTimeout(
-      ()=>{
-        this.btnEnable=true;
-        this.spinnerMode='determinate';
+      () => {
+        this.btnEnable = true;
+        this.spinnerMode = 'determinate';
       }
-      ,3000
+      , 3000
     )
   }
 
   spinnerMode = 'determinate';
-  btnEnable= true;
+  btnEnable = true;
 
   cbChange(event) {
     console.log(event.checked);
@@ -49,9 +52,10 @@ export class EventBindingComponent implements OnInit {
     event = console.log(event.target.value);
   }
 
-  inputName ='Lucas';
+  inputName = 'Lucas';
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

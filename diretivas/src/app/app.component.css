@@ -1,8 +1,9 @@
-.escuro{
+.escuro {
   background: rgba(0, 0, 0, 0.685);
   color: greenyellow;
 }
-.claro{
+
+.claro {
   background: wheat;
   color: black;
 }

@@ -1,5 +1,5 @@
-import { Cliente } from './cliente.model';
-import { Component, Input, OnInit } from '@angular/core';
+import {Cliente} from './cliente.model';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-input-binding',
@@ -22,16 +22,17 @@ export class InputBindingComponent implements OnInit {
       },
       {
         id: 2,
-        name:'Lucas',
-        age:15
+        name: 'Lucas',
+        age: 15
       },
       {
-        id:3,
-        name:'Mércia',
+        id: 3,
+        name: 'Mércia',
         age: 45
       }
     ];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

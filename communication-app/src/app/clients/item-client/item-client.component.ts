@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Clients } from '../clients.model';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Clients} from '../clients.model';
 
 @Component({
   selector: 'app-item-client',
@@ -8,7 +8,7 @@ import { Clients } from '../clients.model';
 })
 export class ItemCLientComponent implements OnInit {
 
-  @Input() client:Clients;
+  @Input() client: Clients;
 
   @Output() updateClient = new EventEmitter<Clients>();
   @Output() removeClient = new EventEmitter<any>();
@@ -17,25 +17,26 @@ export class ItemCLientComponent implements OnInit {
   name: string;
   age: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  edit(){
+  edit() {
     this.onEdit = true;
     this.name = this.client.name;
     this.age = this.client.age;
   }
 
-  remove(){
+  remove() {
     this.removeClient.emit();
   }
 
-  save(){
+  save() {
     this.onEdit = false;
     this.updateClient.emit(
-      { name: this.name, age: this.age }
+      {name: this.name, age: this.age}
     );
   }
 

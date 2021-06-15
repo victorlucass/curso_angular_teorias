@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-two-way-data-binding',
@@ -7,17 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwoWayDataBindingComponent implements OnInit {
 
-  name1:string = 'Digite 01';
-  name2:string = 'Digite 02';
+  name1: string = 'Digite 01';
+  name2: string = 'Digite 02';
 
   cliente = {
     name: 'Victor Lucas',
     lastName: 'Oliveira',
-    age:19,
-    address:""
+    age: 19,
+    address: ""
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

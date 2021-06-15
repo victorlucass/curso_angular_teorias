@@ -1,4 +1,4 @@
 export interface Clients {
-  name:string;
+  name: string;
   age: number;
 }

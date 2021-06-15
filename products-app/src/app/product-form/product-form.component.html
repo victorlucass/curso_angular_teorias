@@ -15,13 +15,13 @@
     <div fxLayout="row" fxLayoutAlign="space-between start">
 
       <mat-form-field fxFlex="60">
-        <mat-select placeholder="Department"  [(ngModel)]="department">
+        <mat-select placeholder="Department" [(ngModel)]="department">
           <mat-option *ngFor='let dep of departments' [value]="dep">{{dep.name}}</mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field fxFlex="30">
-        <input matInput placeholder="Price" type="number"  [(ngModel)]="price">
+        <input matInput placeholder="Price" type="number" [(ngModel)]="price">
         <span matPrefix>$&nbsp;</span>
       </mat-form-field>
 

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PropertyBindingComponent } from './property-binding.component';
+import {PropertyBindingComponent} from './property-binding.component';
 
 describe('PropertyBindingComponent', () => {
   let component: PropertyBindingComponent;
@@ -8,9 +8,9 @@ describe('PropertyBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PropertyBindingComponent ]
+      declarations: [PropertyBindingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
 // import { clearInterval } from 'timers';
 
 @Component({
@@ -9,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class TimerComponent implements OnInit {
 
   miliseconds: number = 0;
-  private interval : any;
+  private interval: any;
   private running = false;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
@@ -24,18 +27,18 @@ export class TimerComponent implements OnInit {
     );
   }
 
-  stop(){
-    if(this.running) {
+  stop() {
+    if (this.running) {
       clearInterval(this.interval);
       this.running = false;
     }
   }
 
-  clear(){
+  clear() {
     this.miliseconds = 0;
   }
 
-  private round(n:number) : number {
+  private round(n: number): number {
     return Math.round(n);
   }
 

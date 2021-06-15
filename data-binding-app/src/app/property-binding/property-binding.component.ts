@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-property-binding',
@@ -7,22 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyBindingComponent implements OnInit {
 
-  btnDisable:string = 'true';
-  blue:string = 'primary';
+  btnDisable: string = 'true';
+  blue: string = 'primary';
   colors: string[] = [
     'primary',
     'accent',
     'warn',
     ''
   ]
-  idx:number = 0;
+  idx: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     setInterval(
-      () => this.idx = (this.idx+1) % this.colors.length
-      ,1000
+      () => this.idx = (this.idx + 1) % this.colors.length
+      , 1000
     );
   }
 

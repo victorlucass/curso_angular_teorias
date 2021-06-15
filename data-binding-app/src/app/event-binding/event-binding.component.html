@@ -27,7 +27,8 @@
 
     <div>
       <mat-checkbox color="primary" (change)="cbChange($event)"
-        >Disable / Enable</mat-checkbox
+      >Disable / Enable
+      </mat-checkbox
       >
     </div>
     <!-- <h4>Basic mat-select</h4> -->
@@ -55,7 +56,7 @@
         matInput
         placeholder="Ex. João do Mal"
         (input)="inputName = $event.target.value"
-        [value] = 'inputName'
+        [value]='inputName'
       />
     </mat-form-field>
     <mat-card-actions> Name: {{ inputName }} </mat-card-actions>

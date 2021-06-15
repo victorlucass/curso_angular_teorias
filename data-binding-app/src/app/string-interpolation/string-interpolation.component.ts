@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-string-interpolation',
@@ -8,27 +8,28 @@ import { Component, OnInit } from '@angular/core';
 export class StringInterpolationComponent implements OnInit {
 
   person = {
-    name : 'Victor',
+    name: 'Victor',
     age: 19,
     lastname: 'Oliveira',
     adress: 'Aparecida, centro'
   }
 
-  colors:string[] = [
+  colors: string[] = [
     'color: blue',
     'color: red',
     'color: green',
     ''
   ]
 
-  idx:number = 0;
+  idx: number = 0;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     setInterval(
-      ()=> this.idx = (this.idx+1) % this.colors.length
-      ,1000
+      () => this.idx = (this.idx + 1) % this.colors.length
+      , 1000
     );
   }
 

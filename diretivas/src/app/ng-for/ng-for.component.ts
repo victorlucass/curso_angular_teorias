@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-ng-for',
@@ -16,23 +16,24 @@ export class NgForComponent implements OnInit {
 
   cities = [
     {
-      name: 'Manaus', state:'AM'
+      name: 'Manaus', state: 'AM'
     },
     {
-      name: 'São Paulo', state:'SP'
+      name: 'São Paulo', state: 'SP'
     },
     {
-      name: 'Maranhão', state:'MR'
+      name: 'Maranhão', state: 'MR'
     },
     {
-      name: 'Pará', state:'PR'
+      name: 'Pará', state: 'PR'
     },
     {
-      name: 'Rio de janeiro', state:'RJ'
+      name: 'Rio de janeiro', state: 'RJ'
     }
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

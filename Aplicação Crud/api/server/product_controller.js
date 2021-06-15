@@ -10,9 +10,9 @@ router.post('/', (req, res) => {
         departments: req.body.departments
     });
     p.save((err, prod) => {
-        if(err)
+        if (err)
             res.status(500).send(err);
-        else    
+        else
             res.status(200).send(prod);
     })
 })
@@ -20,18 +20,18 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     Product.find().exec((err, prods) => {
-        if(err)
+        if (err)
             res.status(500).send(err);
-        else    
-            res.status(200).send(prods);        
+        else
+            res.status(200).send(prods);
     })
 })
 
 router.delete('/:id', (req, res) => {
     Product.deleteOne({_id: req.params.id}, (err) => {
-        if(err)
+        if (err)
             res.status(500).send(err);
-        else    
+        else
             res.status(200).send({});
     })
 })
@@ -47,9 +47,9 @@ router.patch('/:id', (req, res) => {
             prod.price = req.body.price;
             prod.stock = req.body.stock;
             prod.departments = req.body.departments;
-            prod.save((err, prod)=>{
+            prod.save((err, prod) => {
                 if (err)
-                    res.status(500).send(err);                
+                    res.status(500).send(err);
                 else
                     res.status(200).send(prod);
             })

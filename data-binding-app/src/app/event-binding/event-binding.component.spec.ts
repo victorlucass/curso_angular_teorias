@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { EventBindingComponent } from './event-binding.component';
+import {EventBindingComponent} from './event-binding.component';
 
 describe('EventBindingComponent', () => {
   let component: EventBindingComponent;
@@ -8,9 +8,9 @@ describe('EventBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventBindingComponent ]
+      declarations: [EventBindingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

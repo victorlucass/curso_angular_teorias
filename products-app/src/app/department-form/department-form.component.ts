@@ -1,5 +1,5 @@
-import { DepartmentService } from './../department.service';
-import { Component, OnInit } from '@angular/core';
+import {DepartmentService} from './../department.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-department-form',
@@ -10,19 +10,20 @@ export class DepartmentFormComponent implements OnInit {
 
   depName: string;
 
-  constructor(private departmentService: DepartmentService) { }
+  constructor(private departmentService: DepartmentService) {
+  }
 
   ngOnInit(): void {
   }
 
-  save(){
+  save() {
     this.departmentService.addDepartments({
       name: this.depName
     });
     this.clear();
   }
 
-  clear(){
+  clear() {
     this.depName = '';
   }
 

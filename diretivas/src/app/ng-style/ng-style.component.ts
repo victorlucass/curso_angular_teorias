@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-ng-style',
@@ -9,11 +9,13 @@ export class NgStyleComponent implements OnInit {
 
   myFontSize = '1em';
   myColor = 'green';
-  radioChange(event){
+
+  radioChange(event) {
     console.log(event);
   }
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

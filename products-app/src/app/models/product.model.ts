@@ -1,7 +1,7 @@
-import { Departament } from "./department.model";
+import {Departament} from "./department.model";
 
 export interface Product {
-  id:number,
+  id: number,
   prince: number,
   description: string;
   department: Departament;

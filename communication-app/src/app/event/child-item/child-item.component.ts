@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-child-item',
@@ -10,12 +10,13 @@ export class ChildItemComponent implements OnInit {
   @Input() title: string;
   @Output() incr = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  btnClick(n:number){
+  btnClick(n: number) {
     this.incr.emit(n);
   }
 

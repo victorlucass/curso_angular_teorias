@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SubNgIfComponent } from './sub-ng-if.component';
+import {SubNgIfComponent} from './sub-ng-if.component';
 
 describe('SubNgIfComponent', () => {
   let component: SubNgIfComponent;
@@ -8,9 +8,9 @@ describe('SubNgIfComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubNgIfComponent ]
+      declarations: [SubNgIfComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

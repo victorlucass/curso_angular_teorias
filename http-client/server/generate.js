@@ -7,7 +7,7 @@ mongoose.connect(
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 async function generateProducts() {
-    for(let i=0; i<10; i++) {
+    for (let i = 0; i < 10; i++) {
         let p = new Product({
             name: Faker.commerce.productName(),
             department: Faker.commerce.department(),
@@ -15,15 +15,14 @@ async function generateProducts() {
         });
         try {
             await p.save();
-        }
-        catch(err) {
+        } catch (err) {
             throw new Error("Error generating products");
         }
     }
 }
 
 generateProducts()
-    .then(()=>{
+    .then(() => {
         mongoose.disconnect();
         console.log("OK");
     })

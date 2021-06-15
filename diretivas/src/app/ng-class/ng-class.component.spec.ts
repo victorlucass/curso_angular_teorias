@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgClassComponent } from './ng-class.component';
+import {NgClassComponent} from './ng-class.component';
 
 describe('NgClassComponent', () => {
   let component: NgClassComponent;
@@ -8,9 +8,9 @@ describe('NgClassComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgClassComponent ]
+      declarations: [NgClassComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

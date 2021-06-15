@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NgStyleComponent } from './ng-style.component';
+import {NgStyleComponent} from './ng-style.component';
 
 describe('NgStyleComponent', () => {
   let component: NgStyleComponent;
@@ -8,9 +8,9 @@ describe('NgStyleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgStyleComponent ]
+      declarations: [NgStyleComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

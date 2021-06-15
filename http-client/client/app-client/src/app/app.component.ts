@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { ProductsService } from './services/products.service';
+import {Component} from '@angular/core';
+import { Observable } from 'rxjs';
+import { Categoria } from './model/categoria';
+import {ProductsService} from './services/products.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,16 @@ import { ProductsService } from './services/products.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private productsService: ProductsService){}
-  ngOnInit(){
-    this.productsService.getProducts().subscribe(prods => console.log(prods))
+
+  simpleRequestObservable: Observable<Categoria[]>;
+
+  constructor(private productsService: ProductsService) {
+  }
+
+  ngOnInit() {
+  }
+  
+  getSimpleHttpRequest(){
+    this.simpleRequestObservable = this.productsService.getCategorias();
   }
 }

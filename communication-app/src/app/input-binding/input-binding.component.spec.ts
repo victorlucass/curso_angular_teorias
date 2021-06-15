@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InputBindingComponent } from './input-binding.component';
+import {InputBindingComponent} from './input-binding.component';
 
 describe('InputBindingComponent', () => {
   let component: InputBindingComponent;
@@ -8,9 +8,9 @@ describe('InputBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputBindingComponent ]
+      declarations: [InputBindingComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

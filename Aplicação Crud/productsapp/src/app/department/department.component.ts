@@ -1,7 +1,6 @@
-
-import { Component, OnInit } from '@angular/core';
-import { Department } from '../model/department';
-import { DepartmentService } from '../services/department.service';
+import {Component, OnInit} from '@angular/core';
+import {Department} from '../model/department';
+import {DepartmentService} from '../services/department.service';
 
 @Component({
   selector: 'app-department',
@@ -12,31 +11,33 @@ export class DepartmentComponent implements OnInit {
 
   depName: string;
   departments: Department[] = [
-    {name:'dep 01', _id: '1'},
-    {name:'dep 01', _id: '1'},
-    {name:'dep 01', _id: '1'},
-    {name:'dep 01', _id: '1'},
-    {name:'dep 01', _id: '1'}
+    {name: 'dep 01', _id: '1'},
+    {name: 'dep 01', _id: '1'},
+    {name: 'dep 01', _id: '1'},
+    {name: 'dep 01', _id: '1'},
+    {name: 'dep 01', _id: '1'}
   ];
 
   constructor(
     private departmentService: DepartmentService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  save(){}
+  save() {
+  }
 
-  cancel(){
+  cancel() {
 
   }
 
-  delete(dep:Department){
+  delete(dep: Department) {
 
   }
 
-  update(dep:Department){
+  update(dep: Department) {
 
   }
 

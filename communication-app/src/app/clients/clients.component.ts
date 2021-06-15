@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Clients } from './clients.model';
+import {Component, OnInit} from '@angular/core';
+import {Clients} from './clients.model';
 
 @Component({
   selector: 'app-clients',
@@ -8,16 +8,17 @@ import { Clients } from './clients.model';
 })
 export class ClientsComponent implements OnInit {
 
-  clients:Clients[] = [];
-  name:string;
-  age:number;
+  clients: Clients[] = [];
+  name: string;
+  age: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  save(){
+  save() {
     this.clients.push(
       {
         name: this.name,
@@ -28,11 +29,11 @@ export class ClientsComponent implements OnInit {
     this.age = 0;
   }
 
-  deleteCliente(i){
-    this.clients.splice(i,1);
+  deleteCliente(i) {
+    this.clients.splice(i, 1);
   }
 
-  updateClient(client: Clients, i:number) {
+  updateClient(client: Clients, i: number) {
     this.clients[i].name = client.name;
     this.clients[i].age = client.age;
   }
