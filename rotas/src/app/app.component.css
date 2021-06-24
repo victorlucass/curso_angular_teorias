@@ -1,0 +1,13 @@
+.links a + a {
+  margin-left: 20px;
+}
+
+section {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.vl-blue {
+  background-color: #7CB9E8;
+  color: white;
+}

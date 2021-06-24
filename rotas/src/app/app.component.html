@@ -1,0 +1,12 @@
+<mat-toolbar>
+  <span routerLink=''>My Store</span>
+  <hr>
+  <div class="links">
+    <a mat-raised-button routerLink="/dvds" routerLinkActive='vl-blue'>DVDs</a>
+    <a mat-raised-button routerLink="/books" routerLinkActive='vl-blue'>Books</a>
+  </div>
+</mat-toolbar>
+
+<section>
+  <router-outlet></router-outlet>
+</section>
