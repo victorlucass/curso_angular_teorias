@@ -1,3 +1,5 @@
+import { Dvd } from './../models/dvd';
+import { DvdService } from './../services/dvd.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DvdComponent implements OnInit {
 
-  constructor() { }
+  _dvd: Dvd[] = [];
+
+  constructor(private service: DvdService) { }
 
   ngOnInit(): void {
+    this.service.getAll().subscribe(
+      (resource) => {
+        this._dvd = resource;
+      }
+    )
   }
 
 }

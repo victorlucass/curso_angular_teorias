@@ -8,7 +8,9 @@ import { MaterialModule } from './material/material.module';
 import { BookComponent } from './book/book.component';
 import { DvdComponent } from './dvd/dvd.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDatabase } from "./api/in-memory-database";
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(InMemoryDatabase)
   ],
   providers: [],
   bootstrap: [AppComponent]

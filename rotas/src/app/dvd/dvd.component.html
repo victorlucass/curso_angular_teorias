@@ -1,1 +1,5 @@
-<p>dvd works!</p>
+<mat-card *ngFor="let item of _dvd">
+  <span> {{ item.title }} </span>
+  <span> {{ item.year }} </span>
+  <span> {{ item.genre }} </span>
+</mat-card>
