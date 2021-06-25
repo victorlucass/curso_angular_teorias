@@ -11,12 +11,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDatabase } from "./api/in-memory-database";
+import { DvdDetailComponent } from './dvd/dvd-detail/dvd-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     DvdComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DvdDetailComponent
   ],
   imports: [
     BrowserModule,

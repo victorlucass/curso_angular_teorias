@@ -1,5 +1,25 @@
-<mat-card *ngFor="let item of _dvd">
-  <span> {{ item.title }} </span>
-  <span> {{ item.year }} </span>
-  <span> {{ item.genre }} </span>
-</mat-card>
+<h1 *ngIf="title != null">Title : {{ title }} </h1>
+<mat-list>
+  <h2 mat-subheader>DVD List</h2>
+  <mat-list-item *ngFor="let dvd of _dvd; let i=index">
+    <mat-icon mat-list-icon>album</mat-icon>
+    <h4 mat-line>{{dvd.title}}</h4>
+    <button mat-icon-button color="primary" routerLink='/dvds/{{ dvd.id }}'>
+      <mat-icon>more_horiz</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="goDetails(dvd)">
+      <mat-icon>info</mat-icon>
+    </button>
+    <button mat-icon-button color="accent" >
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+<button mat-fab color="primary" class="add-button">
+  <mat-icon>add</mat-icon>
+</button>
+
+<ng-template #loading>
+  <mat-spinner class="loading" mode='indeterminate'></mat-spinner>
+</ng-template>
