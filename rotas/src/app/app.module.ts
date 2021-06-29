@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,19 +13,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDatabase } from "./api/in-memory-database";
 import { DvdDetailComponent } from './dvd/dvd-detail/dvd-detail.component';
+import { DvdFormComponent } from './dvd/dvd-form/dvd-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookDetailComponent } from './book/book-detail/book-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     DvdComponent,
     PageNotFoundComponent,
-    DvdDetailComponent
+    DvdDetailComponent,
+    DvdFormComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDatabase)
   ],

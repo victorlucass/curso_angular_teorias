@@ -31,8 +31,6 @@ export class DvdComponent implements OnInit {
         if(params.has('title')){
           this.title = params.get('title');
           this.year = params.get('year');
-          console.log(this.title);
-          console.log(this.year);
         }
       }
     )
@@ -40,6 +38,19 @@ export class DvdComponent implements OnInit {
 
   goDetails(dvd: Dvd){
     this.router.navigate(['dvds', { title: dvd.title, year: dvd.year }])
+  }
+
+  goNew(){
+    this.router.navigate(['dvds/new']);
+  }
+
+  deleteDvd($event: number){
+    this.service.remove($event).subscribe(
+      () => {
+        alert('Excluído com sucesso!' + $event);
+        this.ngOnInit();
+      }
+    )
   }
 
 }

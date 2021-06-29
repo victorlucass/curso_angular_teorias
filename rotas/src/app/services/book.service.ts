@@ -14,5 +14,9 @@ export class BookService {
     return this._http.get<any>('api/books');
   }
 
+  getById(id: any): Observable<Book[]> {
+    return this._http.get<any>('api/books/' + id);
+  }
+
 
 }
