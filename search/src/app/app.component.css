@@ -1,0 +1,25 @@
+.search-resource {
+  display: flex;
+  margin: 10px auto;
+  max-width: 960px;
+  justify-content: center;
+}
+
+.search-resource input {
+  margin-right: 20px;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  margin: 10px auto;
+  max-width: 960px;
+}
+
+.table th {
+  text-align: inherit !important;
+}
+
+h3 {
+  text-align: center;
+}
