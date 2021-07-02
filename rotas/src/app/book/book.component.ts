@@ -1,5 +1,5 @@
 import { Book } from './../models/book';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 
 @Component({
@@ -7,13 +7,14 @@ import { BookService } from '../services/book.service';
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })
-export class BookComponent implements OnInit {
+export class BookComponent implements OnInit, AfterViewInit {
 
   _books: Book[] = [];
 
   constructor(private _service: BookService) { }
 
   ngOnInit(): void {
+    console.log('Executou primeiro')
     this._service.getAll().subscribe(
       (resource) => {
         this._books = resource;
@@ -21,4 +22,7 @@ export class BookComponent implements OnInit {
     )
   }
 
+  ngAfterViewInit(): void {
+    console.log('Executou por último');
+  }
 }

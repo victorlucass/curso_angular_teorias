@@ -1,5 +1,4 @@
-import { Book } from './../../models/book';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { switchMap } from "rxjs/operators";
@@ -13,6 +12,7 @@ export class BookDetailComponent implements OnInit {
 
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private bookService: BookService
   ) { }
@@ -20,16 +20,32 @@ export class BookDetailComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.book$ = this.route.paramMap.pipe(
+    this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.bookService.getById(params.get('id'))));
+        this.bookService.getById(params.get('id'))
+      )).subscribe(
+        (resource) => {
+          this.book$ = resource;
+        }
+      );
 
     //Esse cara traz apenas uma vez;
-    console.log("Index", this.route.snapshot.paramMap.get('id'));
+    // console.log("Index", this.route.snapshot.paramMap.get('id'));
     //Esse cara atualiza, sempre opitar em usá-lo.
-    this.route.paramMap.subscribe(
-      (params: ParamMap) => console.log('Index: ', params.get('id'))
+    // this.route.paramMap.subscribe(
+    //   (params: any) => console.log(+params.get('id'))
+    // );
+  }
+
+
+  remove() {
+    const params: any = this.route.snapshot.paramMap.get('id');
+    this.bookService.remove(+params).subscribe(
+      () => {
+        this.router.navigate(['books']);
+      }
     );
+
   }
 
 }

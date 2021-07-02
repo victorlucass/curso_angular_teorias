@@ -14,8 +14,12 @@ export class BookService {
     return this._http.get<any>('api/books');
   }
 
-  getById(id: any): Observable<Book[]> {
+  getById(id: any): Observable<Book> {
     return this._http.get<any>('api/books/' + id);
+  }
+
+  remove(id: any): Observable<any> {
+    return this._http.delete<any>('api/books/' + id);
   }
 
 
