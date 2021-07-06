@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(credentials)
       .subscribe(
         (resource) => {
-          console.log(resource);
-          alert(`Bem-vindo ${resource.firstname}`);
+          // console.log(resource);
+          alert(`Bem-vindo ${resource.firstname} ${resource.lastname}`);
           this.router.navigate(['/'])
         },
         (error) => {
