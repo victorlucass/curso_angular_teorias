@@ -30,7 +30,7 @@ export class MainService {
       catchError((e) => {
         return throwError(e);
       })
-    );;
+    );
   }
 
 }

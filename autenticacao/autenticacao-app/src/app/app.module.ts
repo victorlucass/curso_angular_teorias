@@ -21,12 +21,12 @@ import { AuthInterceptor } from './auth/core/interceptions/auth.interceptor';
     MainModule,
     MaterialModule,
     HttpClientModule,
-    AuthModule
+    AuthModule.forRoot()
   ],
   providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-    // }
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
