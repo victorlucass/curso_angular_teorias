@@ -1,0 +1,15 @@
+<mat-card *ngIf="(people$ | async)?.length>0; else noperson">
+  <mat-card-header>
+    <h3>People</h3>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let p of (people$ | async)">{{ p.name }} | {{ p.email }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #noperson>
+  <p>No person found!</p>
+</ng-template>

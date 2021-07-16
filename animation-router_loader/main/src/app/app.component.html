@@ -1,0 +1,57 @@
+<main>
+  <div *ngIf="loadingService.isLoading | async" class="loader-progress">
+    <mat-progress-bar mode='indeterminate'></mat-progress-bar>
+    <!-- <mat-spinner></mat-spinner> -->
+  </div>
+  <mat-toolbar>
+    My App
+    <span fxFlex></span>
+    <div>
+      <ng-container *ngIf="!(authenticated$ | async)">
+        <button mat-button routerLink='/auth/login'>
+          <mat-icon>input</mat-icon>
+          &nbsp;Entrar
+        </button>
+
+        <button mat-button routerLink='/auth/register'>
+          <mat-icon>person_add</mat-icon>
+          &nbsp;Cadastrar-se
+        </button>
+
+        <!-- <button mat-button>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sair</span>
+        </button> -->
+      </ng-container>
+
+      <ng-container *ngIf="(authenticated$ | async) && (user$ | async) ">
+        <button mat-icon-button routerLink='/main/people'>
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button routerLink='/main/products'>
+          <mat-icon>shop</mat-icon>
+        </button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <div class="user-options">
+            <h3>{{ (user$ | async)?.email }}</h3>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              <span>Sair </span>
+            </button>
+          </div>
+        </mat-menu>
+
+      </ng-container>
+    </div>
+  </mat-toolbar>
+
+  <div style="padding: 20px 0;">
+    <router-outlet></router-outlet>
+  </div>
+
+</main>

@@ -1,0 +1,15 @@
+<mat-card *ngIf="(products$ | async)?.length>0; else noproduct">
+  <mat-card-header>
+    <h3>Products</h3>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let p of (products$ | async)">
+        {{ p.name }} | {{ p.departament }} | {{ p.price }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #noproduct>
+  <p>No product found!</p>
+</ng-template>
