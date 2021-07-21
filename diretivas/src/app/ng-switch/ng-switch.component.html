@@ -3,11 +3,8 @@
   <mat-card-content>
     <section>
       <p>Select the field that you need:</p>
-      <mat-radio-group
-        [(ngModel)]="fieldname"
-        name="fieldname"
-        style="display: flex; flex-flow: column nowrap; padding: 10px;"
-      >
+      <mat-radio-group [(ngModel)]="fieldname" name="fieldname"
+        style="display: flex; flex-flow: column nowrap; padding: 10px;">
         <mat-radio-button value="button">Button</mat-radio-button>
         <mat-radio-button value="checkbox">Checkbox</mat-radio-button>
         <mat-radio-button value="progressbar">Progress bar</mat-radio-button>
@@ -22,10 +19,10 @@
       Button
     </button>
     <mat-checkbox *ngSwitchCase="'checkbox'">checkbox</mat-checkbox>
-    <mat-progress-bar
-      color="warn"
-      mode="indeterminate"
-      *ngSwitchCase="'progressbar'"
-    ></mat-progress-bar>
+    <mat-progress-bar color="warn" mode="indeterminate" *ngSwitchCase="'progressbar'"></mat-progress-bar>
   </section>
 </mat-card>
+
+<!--
+  Resumo: O [ngSwitch] ele pegar por exemplo um array de valores e com o *ngSwitchCase ele define qual valor deve ter seu papel.
+ -->
