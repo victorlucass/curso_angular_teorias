@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {from, interval, Observable, Observer, of} from 'rxjs';
+import {from, interval, Observable, Observer, of, Subscription, timer} from 'rxjs';
 
 @Component({
   selector: 'app-basic-creation',
@@ -7,7 +7,11 @@ import {from, interval, Observable, Observer, of} from 'rxjs';
   styleUrls: ['./basic-creation.component.scss'],
 })
 export class BasicCreationComponent implements OnInit {
+
+  sub : Subscription;
+
   constructor() {
+    this.sub = new Subscription();
   }
 
   ngOnInit(): void {
@@ -24,6 +28,8 @@ export class BasicCreationComponent implements OnInit {
     obs.subscribe((resource: string) => {
       console.log(resource);
     });
+    // @ts-ignore
+    this.sub.add(obs);
   }
 
   fromClick() {
@@ -38,16 +44,31 @@ export class BasicCreationComponent implements OnInit {
   }
 
   ofClick() {
-    of([1, 2, 3, 4, 5, {x: 10, y: 20}]).subscribe((v) => console.log(v))
+    const subs = of([1, 2, 3, 4, 5, {x: 10, y: 20}]).subscribe((v) => console.log(v));
+    this.sub.add(subs);
   }
 
   intervalClick() {
     const numbers = interval(1000);
-    numbers.subscribe(
+    const subs = numbers.subscribe(
       (x: number) => {
         console.log("Next " + x);
       }
     )
+    this.sub.add(subs);
   }
 
+  timerClick(){
+    const source = timer(5000, 1000);
+    const subs = source.subscribe(
+      (resources : number) => {
+        console.log(resources);
+      }
+    )
+    this.sub.add(subs);
+  }
+
+  unsubscribeClick(){
+    this.sub.unsubscribe();
+  }
 }
