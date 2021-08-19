@@ -14,6 +14,9 @@ import {FormsModule} from '@angular/forms';
 import {ItemCLientComponent} from './clients/item-client/item-client.component';
 import {ParentChildComponent} from './parent-child/parent-child.component';
 import {TimerComponent} from './parent-child/timer/timer.component';
+import { NgOnChangesComponent } from './ng-on-changes/ng-on-changes.component';
+import {NameChangesComponent} from "./ng-on-changes/name-changes/name-changes.component";
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {TimerComponent} from './parent-child/timer/timer.component';
     ClientsComponent,
     ItemCLientComponent,
     ParentChildComponent,
-    TimerComponent
+    TimerComponent,
+    NgOnChangesComponent,
+    NameChangesComponent
+
   ],
   imports: [
     BrowserModule,

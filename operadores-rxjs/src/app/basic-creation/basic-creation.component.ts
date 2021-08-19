@@ -31,6 +31,8 @@ export class BasicCreationComponent implements OnInit {
     obs.subscribe((resource: string) => {
       console.log(resource);
     });
+    // @ts-ignore
+    this.sub.add(obs);
   }
 
   fromClick() {
