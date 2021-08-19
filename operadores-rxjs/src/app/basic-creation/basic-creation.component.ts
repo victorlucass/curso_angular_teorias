@@ -1,5 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {from, interval, Observable, Observer, of} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import {
+  from,
+  fromEvent,
+  interval,
+  Observable,
+  Observer,
+  of,
+  Subscription,
+  timer,
+} from 'rxjs';
 
 @Component({
   selector: 'app-basic-creation',
@@ -7,11 +16,9 @@ import {from, interval, Observable, Observer, of} from 'rxjs';
   styleUrls: ['./basic-creation.component.scss'],
 })
 export class BasicCreationComponent implements OnInit {
-  constructor() {
-  }
+  subscription = new Subscription();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   observableCreate() {
     const obs = new Observable((observer: Observer<string>) => {
@@ -28,8 +35,8 @@ export class BasicCreationComponent implements OnInit {
 
   fromClick() {
     //Modo 1
-    from([1, 2, 3, 4, {x: 10, y: 15}]).subscribe((v) => {
-      console.log(v)
+    from([1, 2, 3, 4, { x: 10, y: 15 }]).subscribe((v) => {
+      console.log(v);
     });
     //Modo 2
     const myFrom = from(['Olá', 'Mundo', 'angular!']);
@@ -38,16 +45,32 @@ export class BasicCreationComponent implements OnInit {
   }
 
   ofClick() {
-    of([1, 2, 3, 4, 5, {x: 10, y: 20}]).subscribe((v) => console.log(v))
+    of([1, 2, 3, 4, 5, { x: 10, y: 20 }]).subscribe((v) => console.log(v));
   }
 
   intervalClick() {
     const numbers = interval(1000);
-    numbers.subscribe(
-      (x: number) => {
-        console.log("Next " + x);
-      }
-    )
+    const mySubscribe = numbers.subscribe((x: number) => {
+      console.log('Next ' + x);
+    });
+    this.subscription.add(mySubscribe);
   }
 
+  timeClick() {
+    const numbers = timer(5000, 1000);
+    const mySubscribe = numbers.subscribe((v) =>
+      console.log('número da vez ' + v)
+    );
+    this.subscription.add(mySubscribe);
+  }
+
+  fromEventClick() {
+    const fe = fromEvent(document, 'click').subscribe((e) => console.log(e));
+    this.subscription.add(fe);
+  }
+
+  unsubscribe() {
+    this.subscription.unsubscribe();
+    this.subscription = new Subscription();
+  }
 }
